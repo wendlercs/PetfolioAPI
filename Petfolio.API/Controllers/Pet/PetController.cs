@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Petfolio.Application.UseCases.Pet.Delete;
 using Petfolio.Application.UseCases.Pet.GetAll;
 using Petfolio.Application.UseCases.Pet.GetById;
 using Petfolio.Application.UseCases.Pet.Register;
@@ -55,6 +56,19 @@ public class PetController : PetfolioApiBaseController
         var useCase = new UpdatePetUseCase();
 
         useCase.Execute(id, request);
+
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Route("{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorsJson),StatusCodes.Status404NotFound)]
+    public IActionResult DeletePetById(int id)
+    {
+        var useCase = new DeletePetUseCase();
+
+        useCase.Execute(id);
 
         return NoContent();
     }
