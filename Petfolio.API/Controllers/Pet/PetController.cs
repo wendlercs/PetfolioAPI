@@ -30,7 +30,7 @@ public class PetController : PetfolioApiBaseController
     [Route("{id}")]
     [ProducesResponseType(typeof(ResponsePetIdJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status404NotFound)]
-    public IActionResult GetPetById(int id)
+    public IActionResult GetPetById([FromRoute] int id)
     {
         var response = new GetPetByIdUseCase().Execute(id);
 
