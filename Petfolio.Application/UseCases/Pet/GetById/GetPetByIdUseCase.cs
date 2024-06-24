@@ -7,7 +7,8 @@ public class GetPetByIdUseCase
     public ResponsePetIdJson Execute(int id)
     {
         return new ResponsePetIdJson { 
-            Id = id, Name = "Cookie", 
+            Id = id, 
+            Name = "Cookie", 
             Type = Communication.Enums.PetType.Dog, 
             Birthday = new DateTime(year: 2023, month: 01, day: 01) 
         };

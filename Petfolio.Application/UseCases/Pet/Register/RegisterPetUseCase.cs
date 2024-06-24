@@ -5,9 +5,9 @@ namespace Petfolio.Application.UseCases.Pet.Register;
 
 public class RegisterPetUseCase
 {
-    public ResponseRegisteredPetJson Execute(RequestPetJson request)
+    public ResponseRegisterPetJson Execute(RequestPetJson request)
     {
-        return new ResponseRegisteredPetJson
+        return new ResponseRegisterPetJson
         {
             Id = 8,
             Name = request.Name,

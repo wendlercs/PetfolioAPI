@@ -38,7 +38,7 @@ public class PetController : PetfolioApiBaseController
     }
 
     [HttpPost]
-    [ProducesResponseType(typeof(ResponseRegisteredPetJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseRegisterPetJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorsJson), StatusCodes.Status400BadRequest)]
     public IActionResult Register([FromBody] RequestPetJson request)
     {
